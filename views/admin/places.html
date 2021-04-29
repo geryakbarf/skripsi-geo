@@ -1,0 +1,16 @@
+<%- include('./partials/header.html') %>
+<%- include('./partials/navbar.html') %>
+
+<div class="container" style="margin-top: 10px;">
+    <a class="btn btn-primary mb-2" href="/admin/places/new">Add Place</a>
+    <div id="list-place">
+        <%- include('./partials/list_places/all_places.html') %>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+<% if(locals.name){%>
+<script>
+    var username = <%- JSON.stringify(name) %>;
+</script>
+<%}%>
+<%- include('./partials/footer.html') %>

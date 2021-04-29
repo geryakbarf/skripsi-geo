@@ -1,0 +1,73 @@
+<div v-if="sideMenuIndex == 5">
+    <h1>Call to Actions</h1>
+    <div class="columns">
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link Google Map</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[0].value">
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Nomor WA</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[1].value">
+            </div>
+        </div>
+        <div class="column col-2">
+            <div class="form-group">
+                <label class="form-label">Status</label>
+                <label class="form-switch">
+                    <input class="form-input" type="checkbox" v-model="form.call_to_actions[1].draft">
+                    <i class="form-icon"></i> Draft
+                </label>
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link Instagram</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[2].value">
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link website</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[3].value">
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link Grabfood</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[4].value">
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link Gofood</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[5].value">
+            </div>
+        </div>
+        <div class="column col-10">
+            <div class="form-group">
+                <label class="form-label">Link PDF Menu</label>
+                <input class="form-input" type="text" v-model="form.call_to_actions[7].value">
+            </div>
+        </div>
+        <div class="column col-5">
+            <div class="form-group">
+                <label class="form-label" for="contact">Contact Type</label>
+                <select class="form-select" id="contact" v-model="form.contactType">
+                    <option disabled selected value="">Choose an option</option>
+                    <option value="022">022</option>
+                    <option value="+62">+62</option>
+                </select>
+            </div>
+        </div>
+        <div class="column col-5">
+            <div class="form-group">
+                <label class="form-label" for="contact">Contact Number</label>
+                <input class="form-input" id="contactNumber" placeholder="Ex: 85156" required type="number"
+                       v-model="form.contactNumber">
+            </div>
+        </div>
+    </div>
+</div>

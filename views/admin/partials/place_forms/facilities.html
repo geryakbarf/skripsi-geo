@@ -1,0 +1,59 @@
+<div v-if="sideMenuIndex == 1">
+    <h1>Facilities</h1>
+    <div class="columns">
+        <div class="column col-3" v-for="facility in formFieldValues.facilities">
+            <div class="form-group">
+                <label class="form-switch">
+                    <input type="checkbox" v-bind:checked="isFacilityChecked(facility)"
+                           v-on:click="onFacilityChecked(facility)">
+                    <i class="form-icon"></i> {{ facility }}
+                </label>
+            </div>
+        </div>
+        <div class="column col-4" v-if="hasParkingArea">
+            <div class="form-group">
+                <label class="form-label" for="parkir">Parkir*</label>
+                <select class="form-select" id="parkir" required v-model="form.parkir">
+                    <option selected value="">Choose an option</option>
+                    <option v-bind:value="parkir.id" v-for="parkir in formFieldValues.parkirs">{{parkir.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="column col-8" v-if="hasParkingArea">
+            <div class="form-group">
+                <label class="form-label" for="parking">Parking Descriptions</label>
+                <input class="form-input" id="parking" type="text"
+                       v-model="form.facilities[getIndexFasilitas('Parking Area')].descriptions">
+            </div>
+        </div>
+        <div class="column col-12" v-if="hasMushola">
+            <div class="form-group">
+                <label class="form-label" for="mushola">Mushola Descriptions</label>
+                <input class="form-input" id="mushola" type="text"
+                       v-model="form.facilities[getIndexFasilitas('Mushola')].descriptions">
+            </div>
+        </div>
+        <div class="column col-12" v-if="hasFreeWifi">
+            <div class="form-group">
+                <label class="form-label" for="wifi">Free Wifi Descriptions</label>
+                <input class="form-input" id="wifi" type="text"
+                       v-model="form.facilities[getIndexFasilitas('Free wifi')].descriptions">
+            </div>
+        </div>
+        <div class="column col-12" v-if="hasSmokingArea">
+            <div class="form-group">
+                <label class="form-label" for="smoking">Smoking Area Descriptions</label>
+                <input class="form-input" id="smoking" type="text"
+                       v-model="form.facilities[getIndexFasilitas('Smoking Area')].descriptions">
+            </div>
+        </div>
+        <div class="column col-12" v-if="hasToilet">
+            <div class="form-group">
+                <label class="form-label" for="toilet">Toilet Descriptions</label>
+                <input class="form-input" id="toilet" type="text"
+                       v-model="form.facilities[getIndexFasilitas('Toilet')].descriptions">
+            </div>
+        </div>
+    </div>
+</div>
